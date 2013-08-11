@@ -5,12 +5,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Open Sourcing Government</title>
+        <title>Open Sourcing Licensing for Government</title>
         <meta name="description" content="Applying the open-collaboration philosophy to the process of governing">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/pygments.css">
+        <link rel="stylesheet" href="assets/css/emojify.css">
 
     </head>
     <body class="impress-not-supported">
@@ -27,7 +28,7 @@
 
 
                 {% if page.hide_title %}{% else %}
-                  <h1>{% if page.icon %}<i class="icon-{{ page.icon }}">&nbsp;</i>{% endif %}{{ page.title | replace:"Github","GitHub" }}</h1>
+                  <h1>{% if page.icon %}<i class="icon-{{ page.icon }}">&nbsp;</i>{% endif %}{% if page.octicon %}<span class="mega-octicon octicon-{{ page.octicon }}">&nbsp;</span>{% endif %}{{ page.title | replace:"Github","GitHub" }}</h1>
                 {% endif %}
                 {{ page.content }}
                 {% if page.notes %}{% for note in page.notes %}<div class="notes">{{ note }}</div>{% endfor %}{% endif %}
@@ -39,6 +40,21 @@
       <script src="assets/js/impress.js"></script>
       <script>impress().init();</script>
       <script src="assets/js/external-links.js"></script>
-
+      <script type="text/javascript" src="http://localhost:9292/faye/client.js"></script>        
+      <script type="text/javascript" src="assets/js/sync.js"></script>
+      <script type="text/javascript" src="assets/js/emojify.js"></script>
+      <script>
+        emojify.setConfig({
+          emoticons_enabled: false,
+          people_enabled: true,
+          nature_enabled: true,
+          objects_enabled: true,
+          places_enabled: true,
+          symbols_enabled: true,
+          only_crawl_id: 'impress'
+        });
+        emojify.run();
+      </script>
+      </script>
     </body>
 </html>

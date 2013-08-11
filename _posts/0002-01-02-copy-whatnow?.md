@@ -9,4 +9,4 @@ icon: copy
   * Perform/display publicly 
 
 * Since 1979, automatic at the time of creation
-* Can't copyright ideas, only embodiments
+* Can't :copyright: ideas, only embodiments
